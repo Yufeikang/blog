@@ -264,8 +264,8 @@
     <article id="post-linux/网络嗅探" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/03/01/linux/网络嗅探/" class="article-date">
-      <time datetime="2018-03-01T15:19:48.779Z" itemprop="datePublished">2018-03-01</time>
+      <a href="/2017/10/20/linux/网络嗅探/" class="article-date">
+      <time datetime="2017-10-19T22:49:50.000Z" itemprop="datePublished">2017-10-20</time>
 </a>
     </div>
   
@@ -273,6 +273,17 @@
     
       <input type="hidden" class="isFancy" />
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/20/linux/网络嗅探/">网络嗅探</a>
+    </h1>
+  
+
+      </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -285,8 +296,7 @@
 <p>​<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sshpass -p 'route-pass-world' ssh -o StrictHostKeyChecking=no root@remote 'tcpdump -s 0 -U -n -w - -i br-lan not port 22' | wireshark -k -i -</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p>
 </li>
 </ul>
-<pre><code>​
-</code></pre>
+
       
       
     </div>
@@ -313,11 +323,11 @@
 
 
   
-    <article id="post-linux/ubuntu常见问题" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-android/android重新打包签名md" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/03/01/linux/ubuntu常见问题/" class="article-date">
-      <time datetime="2018-03-01T15:19:48.778Z" itemprop="datePublished">2018-03-01</time>
+      <a href="/2016/10/20/android/android重新打包签名md/" class="article-date">
+      <time datetime="2016-10-19T22:49:50.000Z" itemprop="datePublished">2016-10-20</time>
 </a>
     </div>
   
@@ -326,10 +336,49 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/20/android/android重新打包签名md/">android二进制重新打包</a>
+    </h1>
+  
+
+      </header>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="qq无法输入中文"><a href="#qq无法输入中文" class="headerlink" title="*qq无法输入中文"></a>*qq无法输入中文</h1><p>在 /opt/longene/qq/qq.sh 前加入：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span></span><br><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=<span class="string">"fcitx"</span></span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=<span class="string">"fcitx"</span></span><br></pre></td></tr></table></figure></p>
+        <h2 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h2><ol>
+<li><p>apktool</p>
+<blockquote>
+<p><a href="https://ibotpeaches.github.io/Apktool/install/" target="_blank" rel="noopener">下载</a> apktool.jar</p>
+</blockquote>
+</li>
+<li><p>jarsigner</p>
+<blockquote>
+<p>该工具存在于JAVA_HOME/bin目录</p>
+</blockquote>
+</li>
+<li><p>一个证书</p>
+<blockquote>
+<p>可用keygen生成，也可用android stuido创建</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="签名过程"><a href="#签名过程" class="headerlink" title="签名过程"></a>签名过程</h2><h3 id="1-解压"><a href="#1-解压" class="headerlink" title="1. 解压"></a>1. 解压</h3><p>执行下面命令。viathink.apk是打包生成的apk</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar ./apktool.jar d viathink.apk</span><br></pre></td></tr></table></figure>
+<p>执行完成会多出来个viatthink的目录</p>
+<h3 id="2-修改"><a href="#2-修改" class="headerlink" title="2.修改"></a>2.修改</h3><p>进入viathink目录进行操作，比如删除多余的abi文件夹</p>
+<h3 id="3-打包"><a href="#3-打包" class="headerlink" title="3.打包"></a>3.打包</h3><p>执行下面命令, b后面是要打包的文件夹，-o后输出的apk</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar ./apktool.jar b viathink -o dest.apk</span><br></pre></td></tr></table></figure>
+<p>此时输出的apk还未签名</p>
+<h3 id="4-签名"><a href="#4-签名" class="headerlink" title="4.签名"></a>4.签名</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>JAVA_HOME/bin/jarsigner -verbose -keystore ./sms-release.keystore -signedjar dest-signed.pk dest.apk sms-release.keystore</span><br></pre></td></tr></table></figure>
+<p>sms-release.keystore 是签名文件</p>
+<p>dest-signed.apk 是签名后输出的文件名</p>
+<p>结尾的sms-release.keystore是当前keystore的alias</p>
+<p>回车后输入密码即可</p>
 
       
       
@@ -393,89 +442,6 @@
 <p>说明，通过 Object.var 和ClassName.var 访问的并不是同一个数据。上例中初始化函数改变的是self.arg这个变量，self就相当于Object 。arg和self.arg本身并不是一个变量。在Python的成员函数中访问arg的正确形式应该是ClassName.arg 。<br>见下例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span>:</span></span><br><span class="line">    <span class="string">"""docstring for ClassName"""</span></span><br><span class="line">    arg=<span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, arg)</span>:</span></span><br><span class="line">        ClassName.arg = arg</span><br><span class="line"></span><br><span class="line">obj = ClassName(<span class="number">2</span>)</span><br><span class="line">print(obj.arg)</span><br><span class="line">print(ClassName.arg)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">2</span><br><span class="line">[Finished in 0.1s]</span><br></pre></td></tr></table></figure></p>
 <p>静态变量的用处：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span>:</span></span><br><span class="line">    <span class="string">"""docstring for ClassName"""</span></span><br><span class="line">    COUNT=<span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, arg)</span>:</span></span><br><span class="line">        self.arg = arg</span><br><span class="line">        ClassName.COUNT+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">obj1 = ClassName(<span class="number">1</span>)</span><br><span class="line">obj2 = ClassName(<span class="number">2</span>)</span><br><span class="line">obj3 = ClassName(<span class="number">3</span>)</span><br><span class="line">print(ClassName.COUNT)</span><br><span class="line"><span class="comment"># 输出 3</span></span><br></pre></td></tr></table></figure></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-android/android重新打包签名md" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/20/android/android重新打包签名md/" class="article-date">
-      <time datetime="2015-10-19T22:49:50.000Z" itemprop="datePublished">2015-10-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/20/android/android重新打包签名md/">android二进制重新打包</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h2><ol>
-<li><p>apktool</p>
-<blockquote>
-<p><a href="https://ibotpeaches.github.io/Apktool/install/" target="_blank" rel="noopener">下载</a> apktool.jar</p>
-</blockquote>
-</li>
-<li><p>jarsigner</p>
-<blockquote>
-<p>该工具存在于JAVA_HOME/bin目录</p>
-</blockquote>
-</li>
-<li><p>一个证书</p>
-<blockquote>
-<p>可用keygen生成，也可用android stuido创建</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="签名过程"><a href="#签名过程" class="headerlink" title="签名过程"></a>签名过程</h2><h3 id="1-解压"><a href="#1-解压" class="headerlink" title="1. 解压"></a>1. 解压</h3><p>执行下面命令。viathink.apk是打包生成的apk</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar ./apktool.jar d viathink.apk</span><br></pre></td></tr></table></figure>
-<p>执行完成会多出来个viatthink的目录</p>
-<h3 id="2-修改"><a href="#2-修改" class="headerlink" title="2.修改"></a>2.修改</h3><p>进入viathink目录进行操作，比如删除多余的abi文件夹</p>
-<h3 id="3-打包"><a href="#3-打包" class="headerlink" title="3.打包"></a>3.打包</h3><p>执行下面命令, b后面是要打包的文件夹，-o后输出的apk</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar ./apktool.jar b viathink -o dest.apk</span><br></pre></td></tr></table></figure>
-<p>此时输出的apk还未签名</p>
-<h3 id="4-签名"><a href="#4-签名" class="headerlink" title="4.签名"></a>4.签名</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>JAVA_HOME/bin/jarsigner -verbose -keystore ./sms-release.keystore -signedjar dest-signed.pk dest.apk sms-release.keystore</span><br></pre></td></tr></table></figure>
-<p>sms-release.keystore 是签名文件</p>
-<p>dest-signed.apk 是签名后输出的文件名</p>
-<p>结尾的sms-release.keystore是当前keystore的alias</p>
-<p>回车后输入密码即可</p>
 
       
       
