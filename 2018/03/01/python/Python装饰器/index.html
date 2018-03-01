@@ -5,13 +5,17 @@
   
   <title>Kang Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="1. 什么是装饰器？  装饰器是一个用来装饰函数的函数。感觉有点拗口，那么，在我的理解，装饰器只是个辅助函数，有没有它并不影响被装饰函数的运行。 2. 函数表达式  先看一下函数表达式，有这样一个函数：  12def fun():  print(&quot;I am fun&quot;)   我们都知道，fun()运行输出：  1&amp;gt;&amp;gt; I am fun   然而运行 fun则输出:  1&amp;gt;&amp;gt;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Kang Blog">
-<meta property="og:url" content="http://blog.kangyufei.net/index.html">
+<meta property="og:url" content="http://blog.kangyufei.net/2018/03/01/python/Python装饰器/index.html">
 <meta property="og:site_name" content="Kang Blog">
+<meta property="og:description" content="1. 什么是装饰器？  装饰器是一个用来装饰函数的函数。感觉有点拗口，那么，在我的理解，装饰器只是个辅助函数，有没有它并不影响被装饰函数的运行。 2. 函数表达式  先看一下函数表达式，有这样一个函数：  12def fun():  print(&quot;I am fun&quot;)   我们都知道，fun()运行输出：  1&amp;gt;&amp;gt; I am fun   然而运行 fun则输出:  1&amp;gt;&amp;gt;">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2018-03-01T15:20:39.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kang Blog">
+<meta name="twitter:description" content="1. 什么是装饰器？  装饰器是一个用来装饰函数的函数。感觉有点拗口，那么，在我的理解，装饰器只是个辅助函数，有没有它并不影响被装饰函数的运行。 2. 函数表达式  先看一下函数表达式，有这样一个函数：  12def fun():  print(&quot;I am fun&quot;)   我们都知道，fun()运行输出：  1&amp;gt;&amp;gt; I am fun   然而运行 fun则输出:  1&amp;gt;&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="Kang Blog" type="application/atom+xml">
   
@@ -25,9 +29,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -39,8 +40,8 @@
           rootUrl: '/',
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -204,81 +205,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-android/android重新打包签名md" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/03/01/android/android重新打包签名md/" class="article-date">
-      <time datetime="2018-03-01T15:21:05.661Z" itemprop="datePublished">2018-03-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h2><ol>
-<li><p>apktool</p>
-<blockquote>
-<p><a href="https://ibotpeaches.github.io/Apktool/install/" target="_blank" rel="noopener">下载</a> apktool.jar</p>
-</blockquote>
-</li>
-<li><p>jarsigner</p>
-<blockquote>
-<p>该工具存在于JAVA_HOME/bin目录</p>
-</blockquote>
-</li>
-<li><p>一个证书</p>
-<blockquote>
-<p>可用keygen生成，也可用android stuido创建</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="签名过程"><a href="#签名过程" class="headerlink" title="签名过程"></a>签名过程</h2><h3 id="1-解压"><a href="#1-解压" class="headerlink" title="1. 解压"></a>1. 解压</h3><p>执行下面命令。viathink.apk是打包生成的apk</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar ./apktool.jar d viathink.apk</span><br></pre></td></tr></table></figure>
-<p>执行完成会多出来个viatthink的目录</p>
-<h3 id="2-修改"><a href="#2-修改" class="headerlink" title="2.修改"></a>2.修改</h3><p>进入viathink目录进行操作，比如删除多余的abi文件夹</p>
-<h3 id="3-打包"><a href="#3-打包" class="headerlink" title="3.打包"></a>3.打包</h3><p>执行下面命令, b后面是要打包的文件夹，-o后输出的apk</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar ./apktool.jar b viathink -o dest.apk</span><br></pre></td></tr></table></figure>
-<p>此时输出的apk还未签名</p>
-<h3 id="4-签名"><a href="#4-签名" class="headerlink" title="4.签名"></a>4.签名</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>JAVA_HOME/bin/jarsigner -verbose -keystore ./sms-release.keystore -signedjar dest-signed.pk dest.apk sms-release.keystore</span><br></pre></td></tr></table></figure>
-<p>sms-release.keystore 是签名文件</p>
-<p>dest-signed.apk 是签名后输出的文件名</p>
-<p>结尾的sms-release.keystore是当前keystore的alias</p>
-<p>回车后输入密码即可</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-python/Python装饰器" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-python/Python装饰器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2018/03/01/python/Python装饰器/" class="article-date">
@@ -309,190 +236,201 @@
 
       
       
-    </div>
-    
-    <div class="article-info article-info-index">
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
       
-      
-
-      
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-linux/网络嗅探" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/03/01/linux/网络嗅探/" class="article-date">
-      <time datetime="2018-03-01T15:19:48.779Z" itemprop="datePublished">2018-03-01</time>
-</a>
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/03/01/python/Python装饰器/"></a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Kang 的个人博客">Kang</a></p>
+        <p><span>发布时间:</span>2018年03月01日 - 23时20分</p>
+        <p><span>最后更新:</span>2018年03月01日 - 23时20分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/03/01/python/Python装饰器/" title="">http://blog.kangyufei.net/2018/03/01/python/Python装饰器/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.kangyufei.net/2018/03/01/python/Python装饰器/　　作者: Kang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
+
+
+
+<nav id="article-nav">
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="网络嗅探"><a href="#网络嗅探" class="headerlink" title="网络嗅探"></a>网络嗅探</h1><ul>
-<li><p>ARP欺骗工具<br>Ettercap : <a href="http://www.secpulse.com/archives/6068.html" target="_blank" rel="noopener">使用</a></p>
-<p>Ettercap命令行使用：</p>
-<figure class="highlight plain"><figcaption><span>ettercap -T -q -i en0 -w dump -M ARP</span><a href="/192.168.1.15//">/192.168.1.1//```</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    &gt; 192.168.1.15 是目标id</span><br><span class="line">    &gt;</span><br><span class="line">    &gt; 192.168.1.1 是网关ip</span><br><span class="line">    &gt;</span><br><span class="line">    &gt; En0 是网络接口名</span><br><span class="line"></span><br><span class="line">* 图片嗅探工具</span><br><span class="line">      Driftnet :</span><br><span class="line">    &gt; 后台嗅探并保存 sudo driftnet -i &#123;INFACE&#125; -b -d &#123;DIR&#125; -a</span><br><span class="line"></span><br><span class="line">* 用wireshark监控远程服务器数据包</span><br><span class="line"></span><br><span class="line">    ```bash</span><br><span class="line">      ssh root@remote &quot;tcpdump -s 0 -U -n -w - -i br-lan not port 22&quot; | wireshark -k -i -</span><br></pre></td></tr></table></figure>
-<p>免输入密码：</p>
-<p>​<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sshpass -p 'route-pass-world' ssh -o StrictHostKeyChecking=no root@remote 'tcpdump -s 0 -U -n -w - -i br-lan not port 22' | wireshark -k -i -</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p>
-</li>
-</ul>
-<pre><code>​
-</code></pre>
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-linux/ubuntu常见问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/03/01/linux/ubuntu常见问题/" class="article-date">
-      <time datetime="2018-03-01T15:19:48.778Z" itemprop="datePublished">2018-03-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="qq无法输入中文"><a href="#qq无法输入中文" class="headerlink" title="*qq无法输入中文"></a>*qq无法输入中文</h1><p>在 /opt/longene/qq/qq.sh 前加入：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span></span><br><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=<span class="string">"fcitx"</span></span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=<span class="string">"fcitx"</span></span><br></pre></td></tr></table></figure></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-python/Python中的静态成员变量" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/18/python/Python中的静态成员变量/" class="article-date">
-      <time datetime="2016-06-17T18:55:00.000Z" itemprop="datePublished">2016-06-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <a href="/2018/03/01/android/android重新打包签名md/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
         
+          (no title)
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/18/python/Python中的静态成员变量/">Python中的静态成员变量</a>
-    </h1>
   
+    <a href="/2018/03/01/linux/网络嗅探/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>python 也可以定义静态成员变量，就是类的变量。</p>
-<blockquote>
-<p>注意python的静态成员变量只能通过 类.变量名 的形式获取</p>
-</blockquote>
-<p> 看下面例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span>:</span></span><br><span class="line">    <span class="string">"""docstring for ClassName"""</span></span><br><span class="line">    arg=<span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, arg)</span>:</span></span><br><span class="line">        self.arg = arg</span><br><span class="line"></span><br><span class="line">obj = ClassName(<span class="number">2</span>)</span><br><span class="line">print(obj.arg)</span><br><span class="line">print(ClassName.arg)</span><br></pre></td></tr></table></figure></p>
-<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">0</span><br><span class="line">[Finished in 0.1s]</span><br></pre></td></tr></table></figure></p>
-<p>说明，通过 Object.var 和ClassName.var 访问的并不是同一个数据。上例中初始化函数改变的是self.arg这个变量，self就相当于Object 。arg和self.arg本身并不是一个变量。在Python的成员函数中访问arg的正确形式应该是ClassName.arg 。<br>见下例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span>:</span></span><br><span class="line">    <span class="string">"""docstring for ClassName"""</span></span><br><span class="line">    arg=<span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, arg)</span>:</span></span><br><span class="line">        ClassName.arg = arg</span><br><span class="line"></span><br><span class="line">obj = ClassName(<span class="number">2</span>)</span><br><span class="line">print(obj.arg)</span><br><span class="line">print(ClassName.arg)</span><br></pre></td></tr></table></figure></p>
-<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">2</span><br><span class="line">[Finished in 0.1s]</span><br></pre></td></tr></table></figure></p>
-<p>静态变量的用处：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span>:</span></span><br><span class="line">    <span class="string">"""docstring for ClassName"""</span></span><br><span class="line">    COUNT=<span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, arg)</span>:</span></span><br><span class="line">        self.arg = arg</span><br><span class="line">        ClassName.COUNT+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">obj1 = ClassName(<span class="number">1</span>)</span><br><span class="line">obj2 = ClassName(<span class="number">2</span>)</span><br><span class="line">obj3 = ClassName(<span class="number">3</span>)</span><br><span class="line">print(ClassName.COUNT)</span><br><span class="line"><span class="comment"># 输出 3</span></span><br></pre></td></tr></table></figure></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-什么是装饰器？"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是装饰器？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-函数表达式"><span class="toc-number">2.</span> <span class="toc-text">2. 函数表达式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-场景"><span class="toc-number">3.</span> <span class="toc-text">3. 场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-闭包实现"><span class="toc-number">4.</span> <span class="toc-text">4. 闭包实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-用装饰器简化"><span class="toc-number">5.</span> <span class="toc-text">5. 用装饰器简化</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
 
 
 
 
 
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
-  
-  
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'kang',
+      repo: 'yufeikang.github.io',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/03/01/android/android重新打包签名md/" title="上一篇: ">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/03/01/linux/网络嗅探/" title="下一篇: ">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/03/01/android/android重新打包签名md/">android/android重新打包签名md</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/01/python/Python装饰器/">python/Python装饰器</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/01/linux/网络嗅探/">linux/网络嗅探</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/01/linux/ubuntu常见问题/">linux/ubuntu常见问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/18/python/Python中的静态成员变量/">Python中的静态成员变量</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
