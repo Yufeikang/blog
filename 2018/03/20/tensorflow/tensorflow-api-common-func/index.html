@@ -3,15 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Kang Blog</title>
+  <title>《转载》Tensorflow一些常用基本概念与函数 | Kang Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Kang Blog">
-<meta property="og:url" content="http://blog.kangyufei.net/index.html">
+  <meta name="description" content="1、tensorflow的基本运作为了快速的熟悉TensorFlow编程，下面从一段简单的代码开始： 123456789101112import tensorflow as tf #定义‘符号’变量，也称为占位符 a = tf.placeholder(&quot;float&quot;) b = tf.placeholder(&quot;float&quot;) y = tf.mul(a, b) #构造一个op节点 sess = tf.">
+<meta name="keywords" content="tensorflow,ML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《转载》Tensorflow一些常用基本概念与函数">
+<meta property="og:url" content="http://blog.kangyufei.net/2018/03/20/tensorflow/tensorflow-api-common-func/index.html">
 <meta property="og:site_name" content="Kang Blog">
+<meta property="og:description" content="1、tensorflow的基本运作为了快速的熟悉TensorFlow编程，下面从一段简单的代码开始： 123456789101112import tensorflow as tf #定义‘符号’变量，也称为占位符 a = tf.placeholder(&quot;float&quot;) b = tf.placeholder(&quot;float&quot;) y = tf.mul(a, b) #构造一个op节点 sess = tf.">
 <meta property="og:locale" content="zh">
+<meta property="og:image" content="http://img.blog.csdn.net/20160808174705034">
+<meta property="og:updated_time" content="2018-03-20T04:32:54.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kang Blog">
+<meta name="twitter:title" content="《转载》Tensorflow一些常用基本概念与函数">
+<meta name="twitter:description" content="1、tensorflow的基本运作为了快速的熟悉TensorFlow编程，下面从一段简单的代码开始： 123456789101112import tensorflow as tf #定义‘符号’变量，也称为占位符 a = tf.placeholder(&quot;float&quot;) b = tf.placeholder(&quot;float&quot;) y = tf.mul(a, b) #构造一个op节点 sess = tf.">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160808174705034">
   
     <link rel="alternative" href="/atom.xml" title="Kang Blog" type="application/atom+xml">
   
@@ -22,9 +29,6 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-    
-    
   
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
@@ -37,8 +41,8 @@
           rootUrl: '/',
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -202,9 +206,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-tensorflow/tensorflow-api-common-func" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-tensorflow/tensorflow-api-common-func" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2018/03/20/tensorflow/tensorflow-api-common-func/" class="article-date">
@@ -220,12 +222,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/20/tensorflow/tensorflow-api-common-func/">《转载》Tensorflow一些常用基本概念与函数</a>
+    <h1 class="article-title" itemprop="name">
+      《转载》Tensorflow一些常用基本概念与函数
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ML/">ML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -1037,495 +1050,142 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ML/">ML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/03/20/tensorflow/tensorflow-api-common-func/">《转载》Tensorflow一些常用基本概念与函数</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Kang 的个人博客">Kang</a></p>
+        <p><span>发布时间:</span>2018年03月20日 - 12时20分</p>
+        <p><span>最后更新:</span>2018年03月20日 - 12时32分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/03/20/tensorflow/tensorflow-api-common-func/" title="《转载》Tensorflow一些常用基本概念与函数">http://blog.kangyufei.net/2018/03/20/tensorflow/tensorflow-api-common-func/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.kangyufei.net/2018/03/20/tensorflow/tensorflow-api-common-func/　　作者: Kang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/20/tensorflow/tensorflow-api-const-func/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">tensorflow API 常量值函数</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、tensorflow的基本运作"><span class="toc-number">1.</span> <span class="toc-text">1、tensorflow的基本运作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、tf函数"><span class="toc-number">2.</span> <span class="toc-text">2、tf函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TensorFlow的算术操作如下："><span class="toc-number">2.1.</span> <span class="toc-text">TensorFlow的算术操作如下：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#张量操作Tensor-Transformations"><span class="toc-number">2.2.</span> <span class="toc-text">张量操作Tensor Transformations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#矩阵相关运算"><span class="toc-number">2.3.</span> <span class="toc-text">矩阵相关运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#复数操作"><span class="toc-number">2.4.</span> <span class="toc-text">复数操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#归约计算-Reduction"><span class="toc-number">2.5.</span> <span class="toc-text">归约计算(Reduction)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分割-Segmentation"><span class="toc-number">2.6.</span> <span class="toc-text">分割(Segmentation)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#序列比较与索引提取-Sequence-Comparison-and-Indexing"><span class="toc-number">2.7.</span> <span class="toc-text">序列比较与索引提取(Sequence Comparison and Indexing)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#神经网络-Neural-Network"><span class="toc-number">2.8.</span> <span class="toc-text">神经网络(Neural Network)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#保存与恢复变量"><span class="toc-number"></span> <span class="toc-text">保存与恢复变量</span></a>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
 
 
 
 
 
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
-  
-    <article id="post-tensorflow/tensorflow-api-const-func" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/03/20/tensorflow/tensorflow-api-const-func/" class="article-date">
-      <time datetime="2018-03-20T03:42:28.000Z" itemprop="datePublished">2018-03-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+
     
-      <input type="hidden" class="isFancy" />
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'kang',
+      repo: 'yufeikang.github.io',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
     
-    
-      <header class="article-header">
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/20/tensorflow/tensorflow-api-const-func/">tensorflow API 常量值函数</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>在Tensorflow中，任何参数的运算和操作都需要转换成对应的TensorFlow数据类型，例如现实中的字符串类型是不能直接在TensorFlow中进行运算的，必须转换成对应的TensorFlow类型才行</p>
-<p>故而Tensorflow提供了一些函数用于生成常量值．如上是一些基本的生成常量的方法．</p>
-<h3 id="tf-zeros-shape-dtype-tf-float32-name-None"><a href="#tf-zeros-shape-dtype-tf-float32-name-None" class="headerlink" title="tf.zeros(shape, dtype=tf.float32, name=None)"></a><strong>tf.zeros(shape, dtype=tf.float32, name=None)</strong></h3><p>创建一个所有的参数为０的tensor对象</p>
-<p>This operation returns a tensor of type dtype with shape shape and all elements set to zero.</p>
-<p>这个操作会返回一个类型为dtype，并且维度为sharp的tensor，并且所有的参数均为０．</p>
-<p>参数:</p>
-<ul>
-<li>shape: 用于表示维度，通常为一个int32类型数组，或者一个一维(1-D)的<em>tf.int32</em>数字．<strong>注意不能直接使用数字</strong></li>
-<li>dtype: 所要创建的tensor对象的数据类型</li>
-<li>name: 一个该操作的别名(可选的).</li>
-</ul>
-<p>返回:</p>
-<p>所有参数都为０的tensor对象</p>
-<h3 id="tf-zeros-like-tensor-dtype-None-name-None"><a href="#tf-zeros-like-tensor-dtype-None-name-None" class="headerlink" title="tf.zeros_like(tensor, dtype=None, name=None)"></a><strong>tf.zeros_like(tensor, dtype=None, name=None)</strong></h3><p>该方法用于创建一个所有参数均为０的tensor对象</p>
-<p>给定一个tensor(tensor对象)，该方法会返回一个类似当前参数类型以及维度的对象，但是所有参数的值均为０．当参数dtype选定了后，所有返回参数的类型也会变成选定的类型</p>
-<p>该方法实际上为一个拷贝函数：默认情况下，它会拷贝参数tensor的类型，维度等数据，并将其中的值设置为０．当参数dtype设置后，那么拷贝后的tensor对象</p>
-<p><strong>参数:</strong></p>
-<ul>
-<li>tensor: tensor对象</li>
-<li>dtype: 返回的tensor对象类型，不设置(为空时)时返回类型同参数tensor一致．该参数必须为如下tensorflow类型： float32, float64, int8, int16, int32, int64, uint8以及complex64.</li>
-<li>name: 该操作别名 (可选).</li>
-</ul>
-<p><strong>返回:</strong></p>
-<p>所有参数为０的tensor对象</p>
-<p>Example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf8</span></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> basic.util.prints <span class="keyword">as</span> p</span><br><span class="line"></span><br><span class="line">sess = tf.InteractiveSession()</span><br><span class="line"></span><br><span class="line"><span class="comment"># create a tensor object</span></span><br><span class="line">original = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]]</span><br><span class="line">p.printRowValue(<span class="string">"Original value"</span>, original)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用zeros_like，默认类型为int</span></span><br><span class="line">data = tf.zeros_like(original)</span><br><span class="line">p.printValue(<span class="string">"tf.zeros_like(original)"</span>, data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用zeros_like，默认类型为double</span></span><br><span class="line">data = tf.zeros_like(original, dtype=tf.double)</span><br><span class="line">p.printValue(<span class="string">"tf.zeros_like(original, dtype=tf.double)"</span>, data)</span><br></pre></td></tr></table></figure>
-<h3 id="tf-ones-shape-dtype-tf-float32-name-None"><a href="#tf-ones-shape-dtype-tf-float32-name-None" class="headerlink" title="tf.ones(shape, dtype=tf.float32, name=None)"></a><strong>tf.ones(shape, dtype=tf.float32, name=None)</strong></h3><p>创建一个所有的参数为1的tensor对象</p>
-<p>这个操作会返回一个类型为dtype，并且维度为sharp的tensor，并且所有的参数均为０．</p>
-<p><strong>参数</strong>:</p>
-<ul>
-<li>shape: 用于表示维度，通常为一个int32类型数组，或者一个一维(1-D)的<em>tf.int32</em>数字．注意不能直接使用数字</li>
-<li>dtype: 所要创建的tensor对象的数据类型</li>
-<li>name: 一个该操作的别名(可选的).</li>
-</ul>
-<p><strong>返回</strong>:</p>
-<p>所有参数都为1的tensor对象</p>
-<h3 id="tf-fill-dims-value-name-None"><a href="#tf-fill-dims-value-name-None" class="headerlink" title="tf.fill(dims, value, name=None)"></a><strong>tf.fill(dims, value, name=None)</strong></h3><p>创建一个维度为dims，值为value的tensor对象．该操作会创建一个维度为dims的tensor对象，并将其值设置为value，该tensor对象中的值类型和value一致</p>
-<ul>
-<li><ul>
-<li>当value为０时，该方法等同于tf.zeros()</li>
-<li>当value为１时，该方法等同于tf.ones()</li>
-</ul>
-</li>
-</ul>
-<p>参数:</p>
-<ul>
-<li>dims: 类型为int32的tensor对象，用于表示输出的维度(1-D, n-D)，通常为一个int32数组，如：[1], [2,3]等</li>
-<li>value: 常量值(字符串，数字等)，该参数用于设置到最终返回的tensor对象值中</li>
-<li>name: 当前操作别名(可选)</li>
-</ul>
-<p>返回:</p>
-<p>tensor对象，类型和value一致</p>
-<h3 id="tf-random-uniform-x-y-minval-low-maxval-high-dtype-tf-float32"><a href="#tf-random-uniform-x-y-minval-low-maxval-high-dtype-tf-float32" class="headerlink" title="tf.random_uniform((x, y), minval=low,maxval=high,dtype=tf.float32)))"></a>tf.random_uniform((x, y), minval=low,maxval=high,dtype=tf.float32)))</h3><p>返回x*y的矩阵，产生于low和high之间，产生的值是<strong>均匀分布</strong>的。</p>
-<p>Example: </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run(tf.random_uniform(</span><br><span class="line">        (<span class="number">4</span>, <span class="number">4</span>), minval=<span class="number">-0.5</span>,</span><br><span class="line">        maxval=<span class="number">0.5</span>,dtype=tf.float32)))</span><br></pre></td></tr></table></figure>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ML/">ML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-rabbitmq-for-node" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/03/04/rabbitmq-for-node/" class="article-date">
-      <time datetime="2018-03-04T14:03:30.000Z" itemprop="datePublished">2018-03-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/04/rabbitmq-for-node/">rabbitMQ实践 for Node.js</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rabbitmq/">rabbitmq</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-python/Python装饰器" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/03/01/python/Python装饰器/" class="article-date">
-      <time datetime="2018-03-01T15:20:39.276Z" itemprop="datePublished">2018-03-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <a href="/2018/03/20/tensorflow/tensorflow-api-const-func/" title="下一篇: tensorflow API 常量值函数">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/01/python/Python装饰器/">Python装饰器</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="1-什么是装饰器？"><a href="#1-什么是装饰器？" class="headerlink" title="1. 什么是装饰器？"></a>1. 什么是装饰器？</h1><p>  装饰器是一个用来装饰函数的函数。感觉有点拗口，那么，在我的理解，装饰器只是个辅助函数，有没有它并不影响被装饰函数的运行。</p>
-<h1 id="2-函数表达式"><a href="#2-函数表达式" class="headerlink" title="2. 函数表达式"></a>2. 函数表达式</h1><p>  先看一下函数表达式，有这样一个函数：<br>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"I am fun"</span>)</span><br></pre></td></tr></table></figure></p>
-<p>  我们都知道，fun()运行输出：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; I am fun</span><br></pre></td></tr></table></figure></p>
-<p>  然而运行 fun则输出:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; &lt;function __main__.fun&gt;</span><br></pre></td></tr></table></figure></p>
-<p>  所以我们看到函数后加括号就进入了函数内部运行，不加括号只是代表了一个函数对象（Python内部一切皆为对象），记住这一点后面容易理解装饰器。</p>
-<h1 id="3-场景"><a href="#3-场景" class="headerlink" title="3. 场景"></a>3. 场景</h1><p>  现在有一堆函数：<br>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun1</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"I am fun1"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun2</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"I am fun2"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun3</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"I am fun3"</span>)</span><br></pre></td></tr></table></figure></p>
-<p>  为了证明这些函数是我写的，所有的函数后面都要打印一句话：<br>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun1</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"I am fun1"</span>)</span><br><span class="line">  print(<span class="string">"author is kang"</span>)</span><br></pre></td></tr></table></figure></p>
-<p>  但是所以的函数都加这句话似乎太麻烦了。这个时候尅考虑使用闭包来实现。</p>
-<h1 id="4-闭包实现"><a href="#4-闭包实现" class="headerlink" title="4. 闭包实现"></a>4. 闭包实现</h1><p>  改成闭包的实现形式：<br>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_author</span><span class="params">(fun)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">warpper</span><span class="params">()</span>:</span></span><br><span class="line">    fun()</span><br><span class="line">    print(<span class="string">"author is kang"</span>)</span><br><span class="line">  <span class="keyword">return</span> warpper</span><br><span class="line">fun1=show_author(fun1)</span><br></pre></td></tr></table></figure></p>
-<p>  注意到运行fun1=show_author(fun1)这段代码fun1并没有被执行，只是生成了一个新的函数，这个函数等价于第3节最后的函数。</p>
-<h1 id="5-用装饰器简化"><a href="#5-用装饰器简化" class="headerlink" title="5. 用装饰器简化"></a>5. 用装饰器简化</h1><p>  以上需求的实现还是有一点繁琐，Python大发给我们提供了@语法糖，来看一下怎么使用：<br>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@show_author</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun1</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"I am fun1"</span>)</span><br></pre></td></tr></table></figure></p>
-<p>  运行fun1的结果和第3节最后的函数也是一致的。<br>  如程序所示，@shoe_me和原来闭包实现fun1 = show_author(func1)是完全等价的，这样便能在不改变原函数的情况下添加装饰，增加功能。</p>
-
-      
-      
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/tensorflow/tensorflow-api-common-func/">《转载》Tensorflow一些常用基本概念与函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/tensorflow/tensorflow-api-const-func/">tensorflow API 常量值函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/04/rabbitmq-for-node/">rabbitMQ实践 for Node.js</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/01/python/Python装饰器/">Python装饰器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/20/linux/网络嗅探/">网络嗅探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/20/android/android重新打包签名md/">android二进制重新打包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/18/python/Python中的静态成员变量/">Python中的静态成员变量</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
 
 
-
-
-  
-    <article id="post-linux/网络嗅探" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/10/20/linux/网络嗅探/" class="article-date">
-      <time datetime="2017-10-19T22:49:50.000Z" itemprop="datePublished">2017-10-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <script>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/20/linux/网络嗅探/">网络嗅探</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="网络嗅探"><a href="#网络嗅探" class="headerlink" title="网络嗅探"></a>网络嗅探</h1><ul>
-<li><p>ARP欺骗工具<br>Ettercap : <a href="http://www.secpulse.com/archives/6068.html" target="_blank" rel="noopener">使用</a></p>
-<p>Ettercap命令行使用：</p>
-<figure class="highlight plain"><figcaption><span>ettercap -T -q -i en0 -w dump -M ARP</span><a href="/192.168.1.15//">/192.168.1.1//```</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    &gt; 192.168.1.15 是目标id</span><br><span class="line">    &gt;</span><br><span class="line">    &gt; 192.168.1.1 是网关ip</span><br><span class="line">    &gt;</span><br><span class="line">    &gt; En0 是网络接口名</span><br><span class="line"></span><br><span class="line">* 图片嗅探工具</span><br><span class="line">      Driftnet :</span><br><span class="line">    &gt; 后台嗅探并保存 sudo driftnet -i &#123;INFACE&#125; -b -d &#123;DIR&#125; -a</span><br><span class="line"></span><br><span class="line">* 用wireshark监控远程服务器数据包</span><br><span class="line"></span><br><span class="line">    ```bash</span><br><span class="line">      ssh root@remote &quot;tcpdump -s 0 -U -n -w - -i br-lan not port 22&quot; | wireshark -k -i -</span><br></pre></td></tr></table></figure>
-<p>免输入密码：</p>
-<p>​<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sshpass -p 'route-pass-world' ssh -o StrictHostKeyChecking=no root@remote 'tcpdump -s 0 -U -n -w - -i br-lan not port 22' | wireshark -k -i -</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p>
-</li>
-</ul>
-<p>​    </p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="page-android/android重新打包签名md" class="article article-type-page" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/20/android/android重新打包签名md/" class="article-date">
-      <time datetime="2016-10-19T22:49:50.000Z" itemprop="datePublished">2016-10-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/20/android/android重新打包签名md/">android二进制重新打包</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h2><ol>
-<li><p>apktool</p>
-<blockquote>
-<p><a href="https://ibotpeaches.github.io/Apktool/install/" target="_blank" rel="noopener">下载</a> apktool.jar</p>
-</blockquote>
-</li>
-<li><p>jarsigner</p>
-<blockquote>
-<p>该工具存在于JAVA_HOME/bin目录</p>
-</blockquote>
-</li>
-<li><p>一个证书</p>
-<blockquote>
-<p>可用keygen生成，也可用android stuido创建</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="签名过程"><a href="#签名过程" class="headerlink" title="签名过程"></a>签名过程</h2><h3 id="1-解压"><a href="#1-解压" class="headerlink" title="1. 解压"></a>1. 解压</h3><p>执行下面命令。viathink.apk是打包生成的apk</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar ./apktool.jar d viathink.apk</span><br></pre></td></tr></table></figure>
-<p>执行完成会多出来个viatthink的目录</p>
-<h3 id="2-修改"><a href="#2-修改" class="headerlink" title="2.修改"></a>2.修改</h3><p>进入viathink目录进行操作，比如删除多余的abi文件夹</p>
-<h3 id="3-打包"><a href="#3-打包" class="headerlink" title="3.打包"></a>3.打包</h3><p>执行下面命令, b后面是要打包的文件夹，-o后输出的apk</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar ./apktool.jar b viathink -o dest.apk</span><br></pre></td></tr></table></figure>
-<p>此时输出的apk还未签名</p>
-<h3 id="4-签名"><a href="#4-签名" class="headerlink" title="4.签名"></a>4.签名</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>JAVA_HOME/bin/jarsigner -verbose -keystore ./sms-release.keystore -signedjar dest-signed.pk dest.apk sms-release.keystore</span><br></pre></td></tr></table></figure>
-<p>sms-release.keystore 是签名文件</p>
-<p>dest-signed.apk 是签名后输出的文件名</p>
-<p>结尾的sms-release.keystore是当前keystore的alias</p>
-<p>回车后输入密码即可</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-python/Python中的静态成员变量" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/18/python/Python中的静态成员变量/" class="article-date">
-      <time datetime="2016-06-17T18:55:00.000Z" itemprop="datePublished">2016-06-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/18/python/Python中的静态成员变量/">Python中的静态成员变量</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>python 也可以定义静态成员变量，就是类的变量。</p>
-<blockquote>
-<p>注意python的静态成员变量只能通过 类.变量名 的形式获取</p>
-</blockquote>
-<p> 看下面例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span>:</span></span><br><span class="line">    <span class="string">"""docstring for ClassName"""</span></span><br><span class="line">    arg=<span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, arg)</span>:</span></span><br><span class="line">        self.arg = arg</span><br><span class="line"></span><br><span class="line">obj = ClassName(<span class="number">2</span>)</span><br><span class="line">print(obj.arg)</span><br><span class="line">print(ClassName.arg)</span><br></pre></td></tr></table></figure></p>
-<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">0</span><br><span class="line">[Finished in 0.1s]</span><br></pre></td></tr></table></figure></p>
-<p>说明，通过 Object.var 和ClassName.var 访问的并不是同一个数据。上例中初始化函数改变的是self.arg这个变量，self就相当于Object 。arg和self.arg本身并不是一个变量。在Python的成员函数中访问arg的正确形式应该是ClassName.arg 。<br>见下例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span>:</span></span><br><span class="line">    <span class="string">"""docstring for ClassName"""</span></span><br><span class="line">    arg=<span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, arg)</span>:</span></span><br><span class="line">        ClassName.arg = arg</span><br><span class="line"></span><br><span class="line">obj = ClassName(<span class="number">2</span>)</span><br><span class="line">print(obj.arg)</span><br><span class="line">print(ClassName.arg)</span><br></pre></td></tr></table></figure></p>
-<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">2</span><br><span class="line">[Finished in 0.1s]</span><br></pre></td></tr></table></figure></p>
-<p>静态变量的用处：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span>:</span></span><br><span class="line">    <span class="string">"""docstring for ClassName"""</span></span><br><span class="line">    COUNT=<span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, arg)</span>:</span></span><br><span class="line">        self.arg = arg</span><br><span class="line">        ClassName.COUNT+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">obj1 = ClassName(<span class="number">1</span>)</span><br><span class="line">obj2 = ClassName(<span class="number">2</span>)</span><br><span class="line">obj3 = ClassName(<span class="number">3</span>)</span><br><span class="line">print(ClassName.COUNT)</span><br><span class="line"><span class="comment"># 输出 3</span></span><br></pre></td></tr></table></figure></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
